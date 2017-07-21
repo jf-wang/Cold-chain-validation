@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+body {
+    margin: 0px 0px 0 20px;
+    padding: 0;
+    background: rgb(245, 245, 245);
+}
+
+table {
+    margin-top: 10px;
+}
+
+thead td {
+    text-align: center;
+}
+
+table td {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #aaa;
+    text-align: center;
+}
+
+table tr td:last-child {
+    width: 600px;
+}
+
+thead th {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #aaa;
+    background-color: #ccc;
+    text-align: center;
+}
+
+.hover {
+    background-color: orange;
+}
+
+.quanxian_xiangmu {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.span {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background: rgb(204, 204, 204);
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>配置信息修改</title>
+    <link rel="stylesheet" href="./peizhi.css">
+</head>
+
+<body>
+    <div class="content">
+        <div style="display:flex; flex-direction:column;">
+            <div class=" flex-item ">
+                <span style="margin-left:24px ">系统名称</span><span class="maohao ">:</span>
+                <input type="text " class="xitongname" placeholder="中易云冷链验证平台">
+            </div>
+            <div class="flex-item ">
+                <span style="margin-left:22px;float:left ">公司logo</span><span class="maohao " style="float:left ">:</span>
+                <div class="shangchuanimg">
+                    <input type="file" name="file" onchange="imgPreview(this)" />
+
+                    <br>
+                    <img id="preview" />
+                </div>
+            </div>
+            <div class="flex-item ">
+                <span style="margin-left:24px ">公司名称</span><span class="maohao ">:</span>
+                <input type="text " class="gongsiname" placeholder="中易云（唐山）物联网有限公司">
+            </div>
+            <div class="flex-item ">
+                <span class="true ">修改</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/jquery-3.1.1.min.js "></script>
+<script src="../../js/YiYunWuLian_Url.js "></script>
+<script src="./peizhi.js "></script>
+
+</html>

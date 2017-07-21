@@ -1,0 +1,23 @@
+@media only screen and (min-width: 960px) and (max-width: 1500px) {
+    .table1 th:nth-child(1),
+    .table1 td:nth-child(1) {
+        border-left: 1px solid rgb(198, 198, 198);
+        width: 120px;
+    }
+    .table1 th:nth-child(2),
+    .table1 tr:nth-child(2) {
+        width: 220px;
+    }
+    .table1 th:nth-child(3),
+    .table1 tr:nth-child(3) {
+        width: 285px;
+    }
+    .table1 th:nth-child(4),
+    .table1 tr:nth-child(4) {
+        width: 285px;
+    }
+    .table1 th:nth-child(5),
+    .table1 tr:nth-child(5) {
+        width: 200px;
+    }
+}

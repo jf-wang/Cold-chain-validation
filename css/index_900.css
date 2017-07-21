@@ -1,0 +1,41 @@
+@media only screen and (min-width: 960px) and (max-width: 1500px) {
+    .head {
+        height: 60px;
+    }
+    .head_left {
+        margin: 5px 65px 0 20px;
+    }
+    .head_cont {
+        margin-top: 20px;
+    }
+    .head_off {
+        width: 60px;
+        height: 60px;
+    }
+    .head_off img {
+        margin: 18px 0 0 18px
+    }
+    #sideBar {
+        top: 60px;
+    }
+    .footer {
+        height: 30px;
+        background-size: 100% 30px;
+    }
+    .img {
+        margin-top: 10px;
+    }
+    #main {
+        top: 60px;
+        width: 83.8%;
+        height: 86%;
+    }
+    .layui-nav-tree .layui-nav-child a {
+        height: 32px;
+        line-height: 32px;
+        color: white
+    }
+    /* .layui-nav-tree .layui-nav-item a {
+        height: 40px;
+    } */
+}

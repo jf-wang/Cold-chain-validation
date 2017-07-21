@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+body {
+    margin: 20px 0px 0 20px;
+    padding: 0;
+    background: rgb(245, 245, 245);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    text-align: center;
+}
+
+tbody {
+    text-align: center;
+    font-size: 14px;
+    background-color: white;
+}
+
+th,
+td {
+    width: 300px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+}
+
+thead tr:first-child {
+    background-color: #ccc;
+}
+
+thead tr {
+    color: #000;
+}
+
+.tbody tr td:first-child {
+    color: red;
+}
+
+.hover {
+    background-color: orange;
+}
