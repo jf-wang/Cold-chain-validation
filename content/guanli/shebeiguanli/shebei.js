@@ -1,7 +1,7 @@
  $.ajax({ //页面加载
      type: "GET",
      contentType: "application/x-www-form-urlencoded",
-     url: "" + url + "/api/Temp/GetTempList?Token=" + token + "",
+     url: "***",
      data: {},
      dataType: "json",
      success: function(data, status) {
@@ -18,7 +18,7 @@
              $.ajax({
                  type: "GET",
                  contentType: "application/x-www-form-urlencoded",
-                 url: "" + url + "/api/Repeater/GetRepeater/" + subuzhongjiqi + "?Token=" + token + "",
+                 url: "***",
                  data: {},
                  async: false,
                  dataType: "json",
@@ -63,7 +63,7 @@
      $.ajax({
          type: "POST",
          contentType: "application/x-www-form-urlencoded",
-         url: "" + url + "/api/Temp/SaveTemp?Token=" + token + "",
+         url: "***",
          data: {
              TempCode: codes,
              TempName: wdname,
@@ -101,7 +101,7 @@
          $.ajax({
              type: "POST",
              contentType: "application/x-www-form-urlencoded",
-             url: "" + url + "/api/Temp/SaveTemp?Token=" + token + "",
+             url: "***",
              data: {
                  TempId: id,
                  TempCode: b_code,
@@ -134,7 +134,7 @@
          $.ajax({
              type: "POST",
              contentType: "application/x-www-form-urlencoded",
-             url: "" + url + "/api/Temp/DelTemp/" + id + "?Token=" + token + "",
+             url: "***",
              data: {},
              dataType: "json",
              success: function(data, status) {
@@ -155,7 +155,7 @@
  $.ajax({ //页面加载
      type: "GET",
      contentType: "application/x-www-form-urlencoded",
-     url: "" + url + "/api/Temp/GetTempList?Token=" + token + "",
+     url: "***",
      data: {},
      dataType: "json",
      success: function(data, status) {
@@ -203,7 +203,7 @@
  $.ajax({ //循环中继器*****************************************************/**/ok */
      type: "GET",
      contentType: "application/x-www-form-urlencoded",
-     url: "" + url + "/api/Repeater/GetRepeaterList?Token=" + token + "",
+     url: "***",
      data: {},
      dataType: "json",
      success: function(data, status) {
@@ -222,7 +222,7 @@
  $.ajax({ //循环中继器*****************************************************/**/ok */
      type: "GET",
      contentType: "application/x-www-form-urlencoded",
-     url: "" + url + "/api/Repeater/GetRepeaterList?Token=" + token + "",
+     url: "***",
      data: {},
      dataType: "json",
      success: function(data, status) {

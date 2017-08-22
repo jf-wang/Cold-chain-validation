@@ -12,7 +12,7 @@
           window.print();　　
           document.body.innerHTML = oldstr;
           location.reload() //刷新页面
-          return false;   
+          return false;
       }
   }
   /**
@@ -89,19 +89,19 @@
       window.clearInterval(idTmr);
       CollectGarbage();
   }
-  var tableToExcel = (function () {
+  var tableToExcel = (function() {
       var uri = 'data:application/vnd.ms-excel;base64,',
           template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
-          base64 = function (s) {
+          base64 = function(s) {
               return window.btoa(unescape(encodeURIComponent(s)))
           },
-          format = function (s, c) {
+          format = function(s, c) {
               return s.replace(/{(\w+)}/g,
-                  function (m, p) {
+                  function(m, p) {
                       return c[p];
                   })
           }
-      return function (table, name) {
+      return function(table, name) {
           if (!table.nodeType) table = document.getElementById(table)
           var ctx = {
               worksheet: name || 'Worksheet',
@@ -111,63 +111,63 @@
       }
   })()
 
-  var time_chaxun = function () {
-      jeDate({
-          dateCell: "#dateinfo4",
-          format: "YYYY-MM-DD hh:MM",
-          isinitVal: true,
-          isTime: true, //isClear:false,
-          minDate: "1900-01-01 00:00",
-          okfun: function (val) {
-              alert(val)
-          }
-      })
-      jeDate({
-          dateCell: "#dateinfo5",
-          format: "YYYY-MM-DD hh:MM",
-          isinitVal: true,
-          isTime: true, //isClear:false,
-          minDate: "1900-01-01 00:00:00",
-          okfun: function (val) {
-              alert(val)
-          }
-      })
-      jeDate({
-          dateCell: "#dateinfo6",
-          format: "YYYY-MM-DD",
-          isinitVal: true,
-          isTime: false, //isClear:false,
-          minDate: "1900-01-01 00:00:00",
-          okfun: function (val) {
-              alert(val)
-          }
-      })
+  var time_chaxun = function() {
+          jeDate({
+              dateCell: "#dateinfo4",
+              format: "YYYY-MM-DD hh:MM",
+              isinitVal: true,
+              isTime: true, //isClear:false,
+              minDate: "1900-01-01 00:00",
+              okfun: function(val) {
+                  alert(val)
+              }
+          })
+          jeDate({
+              dateCell: "#dateinfo5",
+              format: "YYYY-MM-DD hh:MM",
+              isinitVal: true,
+              isTime: true, //isClear:false,
+              minDate: "1900-01-01 00:00:00",
+              okfun: function(val) {
+                  alert(val)
+              }
+          })
+          jeDate({
+              dateCell: "#dateinfo6",
+              format: "YYYY-MM-DD",
+              isinitVal: true,
+              isTime: false, //isClear:false,
+              minDate: "1900-01-01 00:00:00",
+              okfun: function(val) {
+                  alert(val)
+              }
+          })
 
-      $(".xunhuangonsi").click(function () { //点击公司时候变化表头
-          var gongsinameid = $(".xunhuangonsi").val();
-          if (gongsinameid == 0) {
-              $(".gongsi").text("公司名称")
-          } else {
-              $.ajax({
-                  type: "GET",
-                  contentType: "application/x-www-form-urlencoded",
-                  url: "" + url + "/api/Department/GetDep/" + gongsinameid + "?Token=" + token + "",
-                  data: {},
-                  dataType: "json",
-                  success: function (data, status) {
-                      // console.log(data.Data.DepName)
-                      // console.log(this.url)
-                      $(".gongsi").text(data.Data.DepName)
-                  },
-                  error: function (e) {
-                      // alert("请求失败!");
-                      console.log(this.url)
-                  },
-                  complete: function () {
+          $(".xunhuangonsi").click(function() { //点击公司时候变化表头
+              var gongsinameid = $(".xunhuangonsi").val();
+              if (gongsinameid == 0) {
+                  $(".gongsi").text("公司名称")
+              } else {
+                  $.ajax({
+                      type: "GET",
+                      contentType: "application/x-www-form-urlencoded",
+                      url: "***",
+                      data: {},
+                      dataType: "json",
+                      success: function(data, status) {
+                          // console.log(data.Data.DepName)
+                          // console.log(this.url)
+                          $(".gongsi").text(data.Data.DepName)
+                      },
+                      error: function(e) {
+                          // alert("请求失败!");
+                          console.log(this.url)
+                      },
+                      complete: function() {
 
-                  }
-              });
-          }
-      })
-  }()
-//   time_chaxun();
+                      }
+                  });
+              }
+          })
+      }()
+      //   time_chaxun();

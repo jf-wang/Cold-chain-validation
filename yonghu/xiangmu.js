@@ -1,7 +1,7 @@
 ﻿$.ajax({ //循环公司*****************************************************/**/ok */
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Department/GetDepList?Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -30,7 +30,7 @@ function aa() {
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/User/SetManageDeps?Token=" + token + "",
+        url: "***",
         data: { UserId: LSuserid, DepIds: shuzu },
         dataType: "json",
         success: function(data, status) {
@@ -39,7 +39,7 @@ function aa() {
             $.ajax({
                 type: "GET",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/User/GetManageDeps?userId=" + LSuserid + "&Token=" + token + "",
+                url: "***",
                 data: {},
                 dataType: "json",
                 success: function(data, status) {
@@ -48,7 +48,7 @@ function aa() {
                         $.ajax({ //循环公司*****************************************************/**/ok */
                             type: "GET",
                             contentType: "application/x-www-form-urlencoded",
-                            url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+                            url: "***",
                             data: {},
                             dataType: "json",
                             success: function(data, status) {
@@ -74,24 +74,6 @@ function aa() {
         },
         complete: function() {}
     });
-    // $("#before").text("")
-    // $.ajax({ //循环公司*****************************************************/**/ok */
-    //     type: "GET",
-    //     contentType: "application/x-www-form-urlencoded",
-    //     url: "" + url + "/api/Department/GetDepList?Token=" + token + "",
-    //     data: {},
-    //     dataType: "json",
-    //     success: function(data, status) {
-    //         for (var i = 0; i < data.Data.length; i++) {
-    //             var li = $("<li value=" + data.Data[i].DepId + "  onclick='left_xzxm(this)'>" + data.Data[i].DepName + "</li>");
-    //             li.appendTo("#before");
-    //         }
-    //     },
-    //     error: function(e) {
-    //         alert("公司列表请求失败!");
-    //     },
-    //     complete: function() {}
-    // });
 }
 
 function left_xzxm(com) {
@@ -142,7 +124,7 @@ function xuanze(cc) { //选择项目时候点击)
     $.ajax({
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/User/GetManageDeps?userId=" + userId + "&Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         success: function(data, status) {
@@ -151,7 +133,7 @@ function xuanze(cc) { //选择项目时候点击)
                 $.ajax({ //循环公司*****************************************************/**/ok */
                     type: "GET",
                     contentType: "application/x-www-form-urlencoded",
-                    url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+                    url: "***",
                     data: {},
                     dataType: "json",
                     success: function(data, status) {
@@ -181,7 +163,7 @@ function xuanze(cc) { //选择项目时候点击)
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/User/SetManageDeps?Token=" + token + "",
+            url: "***",
             data: { UserId: userId, DepIds: shuzu },
             dataType: "json",
             success: function(data, status) {
@@ -205,7 +187,7 @@ function xuanze(cc) { //选择项目时候点击)
             $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/User/SaveUser?Token=" + token + "",
+            url: "***",
             data: {
                 UserId: userId,
                 UserName: name,

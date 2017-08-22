@@ -8,7 +8,7 @@ var uesrName = localStorage.getItem("userName");
 $.ajax({ //请求用户id******************************************************/**/ok */
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/User/GetUser?userId=" + uesrName + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -16,7 +16,7 @@ $.ajax({ //请求用户id******************************************************/
 
         if (data.Data.UserRole == 2) {
             localStorage.setItem("UserRole", "2")
-                 $("#sideBar ul li:nth-child(3)").text("");
+            $("#sideBar ul li:nth-child(3)").text("");
             $("#sideBar ul li:nth-child(4)").text("");
             // $("#sideBar ul li:nth-child(5)").text("");
         } else {

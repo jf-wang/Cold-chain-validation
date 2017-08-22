@@ -3,39 +3,39 @@ var userdepid = ''
 $.ajax({ // 页面加载获取用户ID
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/User/GetUser?userId=" + userid + "&Token=" + token + "",
+    url: "***",
     data: {},
     async: false, //关闭异步
     dataType: "json",
-    success: function (data, status) {
+    success: function(data, status) {
         userdepid = data.Data.UserDepId
         console.log(data, status)
     },
-    error: function (e) {
+    error: function(e) {
         alert("111!");
     },
-    complete: function () {
+    complete: function() {
 
     }
 });
 
- depId = localStorage.getItem("depId");
-    var img = $("<img src='" + url + "/api/Logo/GetLogo?DepId=" + depId + "' class='gongsologo' >");
-    img.appendTo(".head_left")
-    $.ajax({ //********************获取公司名***************************/**/ok */
-        type: "GET",
-        contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
-        data: {},
-        dataType: "json",
-        success: function (data, status) {
-            $(".gongsiming").text(data.Data.DepName);
-        },
-        error: function (e) {
-            alert("公司列表请求失败!");
-        },
-        complete: function () {}
-    });
+depId = localStorage.getItem("depId");
+var img = $("<img src='" + url + "/api/Logo/GetLogo?DepId=" + depId + "' class='gongsologo' >");
+img.appendTo(".head_left")
+$.ajax({ //********************获取公司名***************************/**/ok */
+    type: "GET",
+    contentType: "application/x-www-form-urlencoded",
+    url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+    data: {},
+    dataType: "json",
+    success: function(data, status) {
+        $(".gongsiming").text(data.Data.DepName);
+    },
+    error: function(e) {
+        alert("公司列表请求失败!");
+    },
+    complete: function() {}
+});
 
 var renyuanxinxi = {}
 renyuanxinxi.gongsi = [],
@@ -64,10 +64,10 @@ var year = $('.year').val()
 $.ajax({ // 页面加载生成对应用户ID内容
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Employee/GetEmployee?DepId=" + userdepid + "&Year=" + year + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
-    success: function (data, status) {
+    success: function(data, status) {
         console.log(data.Data)
         if (data.Data != null) {
             var nowYear = data.Data.EmployeeYear
@@ -98,7 +98,7 @@ $.ajax({ // 页面加载生成对应用户ID内容
                     "<td colspan='10' style='border:0;text-align:right'><span>制表时间</span><span class='maohao'>:</span>" + nowYear + "/" + (month + 1) + "/" + day + "</td>" +
                     "</tr>");
                 wctime.appendTo('#year')
-                // $('.gongsi_name').text(ds.gongsi[0].name)
+                    // $('.gongsi_name').text(ds.gongsi[0].name)
             }
         } else {
             // $('.tbody').text('');
@@ -123,16 +123,16 @@ $.ajax({ // 页面加载生成对应用户ID内容
         }
         shuangji()
     },
-    error: function (e) {
+    error: function(e) {
         alert("222!");
         console.log(this.url)
     },
-    complete: function () {
+    complete: function() {
 
     }
 });
-var gaibian = function () {
-    $('.year').change(function () { //年份改变生成数据
+var gaibian = function() {
+    $('.year').change(function() { //年份改变生成数据
         year = $('.year').val()
         var myDate = new Date();
         var month = myDate.getMonth()
@@ -141,10 +141,10 @@ var gaibian = function () {
         $.ajax({ // 页面加载生成对应用户ID内容
             type: "GET",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Employee/GetEmployee?DepId=" + userdepid + "&Year=" + year + "&Token=" + token + "",
+            url: "***",
             data: {},
             dataType: "json",
-            success: function (data, status) {
+            success: function(data, status) {
                 console.log(data.Data)
                 if (data.Data != null) {
                     var nowYear = data.Data.EmployeeYear
@@ -175,7 +175,7 @@ var gaibian = function () {
                             "<td colspan='10' style='border:0;text-align:right'><span>制表时间</span><span class='maohao'>:</span>" + nowYear + "/" + (month + 1) + "/" + day + "</td>" +
                             "</tr>");
                         wctime.appendTo('#year')
-                        // $('.gongsi_name').text(ds.gongsi[0].name)
+                            // $('.gongsi_name').text(ds.gongsi[0].name)
                     }
                 } else {
                     $('.tbody').text('');
@@ -200,11 +200,11 @@ var gaibian = function () {
                 }
                 shuangji()
             },
-            error: function (e) {
+            error: function(e) {
                 alert("222!");
                 console.log(this.url)
             },
-            complete: function () {
+            complete: function() {
 
             }
         });
@@ -213,8 +213,8 @@ var gaibian = function () {
 gaibian()
 
 // console.log(year)
-$(".save").click(function () { //点击保存编辑的数据
-    $('#tbody tr').each(function () {
+$(".save").click(function() { //点击保存编辑的数据
+    $('#tbody tr').each(function() {
         var renyuan_zhiwei = $(this).find('td:nth(0)').text(); // 获取验证小组人员
         var renyuan_name = $(this).find('td:nth(1)').text(); // 获取姓名
         var renyuan_tel = $(this).find('td:nth(2)').text(); // 获取电话
@@ -236,23 +236,23 @@ $(".save").click(function () { //点击保存编辑的数据
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Employee/SaveEmpolyee?Token=" + token + "",
+        url: "***",
         data: {
             EmployeeDepId: userdepid,
             EmployeeYear: year,
             EmployeeData: datas
         },
         dataType: "json",
-        success: function (data, status) {
+        success: function(data, status) {
             console.log(data, status)
             console.log(year)
             location.reload() //刷新页面
         },
-        error: function (e) {
+        error: function(e) {
             alert("111!");
             console.log(this.url)
         },
-        complete: function () {
+        complete: function() {
 
         }
     });

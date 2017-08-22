@@ -2,7 +2,7 @@
   $.ajax({ //获取对象列表
       type: "GET",
       contentType: "application/x-www-form-urlencoded",
-      url: "" + url + "/api/Check/GetCheckObjectList?DepId=" + depId + "&Token=" + token + "",
+      url: "***",
       data: {},
       dataType: "json",
       success: function(data, status) {
@@ -20,7 +20,7 @@
   $.ajax({ //****************************************************/**/ok */
       type: "GET",
       contentType: "application/x-www-form-urlencoded",
-      url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+      url: "***",
       data: {},
       dataType: "json",
       success: function(data, status) {
@@ -48,7 +48,7 @@
       $.ajax({
           type: "GET",
           contentType: "application/x-www-form-urlencoded",
-          url: "" + url + "/api/Temp/GetTempListByCheckObject?ObjId=" + id + "&Token=" + token + "",
+          url: "***",
           data: {},
           dataType: "json",
           success: function(data, status) {
@@ -62,7 +62,7 @@
               $.ajax({
                   type: "GET",
                   contentType: "application/x-www-form-urlencoded",
-                  url: "" + url + "/api/Temp/GetHistoryData?DepId=" + depId + "&ObjId=" + id + "&StartDate=" + StartDate + "&EndDate=" + EndDate + "&Page=" + page + "&Size=10&Token=" + token + "",
+                  url: "***",
                   data: {},
                   dataType: "json",
                   success: function(data, status) {
@@ -123,7 +123,7 @@
       var id = $(".xunhunazhongjiqi").val();
       var StartDate = $("#dateinfo4").val();
       var EndDate = $("#dateinfo5").val();
-      window.open("http://121.42.30.247:8020/api/Temp/GetHistoryExcel?DepId=" + depId + "&ObjId=" + id + "&StartDate=" + StartDate + "&EndDate=" + EndDate + "&Page=" + page + "&Size=10&Token=" + token + "")
-      var url = "http://121.42.30.247:8020/api/Temp/GetHistoryExcel?DepId=" + depId + "&ObjId=" + id + "&StartDate=" + StartDate + "&EndDate=" + EndDate + "&Page=" + page + "&Size=10&Token=" + token + "";
+      window.open("***")
+      var url = "***";
       console.log(url)
   })

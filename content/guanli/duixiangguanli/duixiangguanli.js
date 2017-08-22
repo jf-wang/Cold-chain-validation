@@ -2,7 +2,7 @@
 $.ajax({ //页面加载
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Check/GetCheckObjectList?DepId=" + checkId + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -44,7 +44,7 @@ $(".tainjia").click(function() { //新建点击确定的时候收集的信息
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Check/SaveCheckObject?Token=" + token + "",
+        url: "***",
         data: {
             CheckObjectDepId: checkId,
             CheckObjectCode: codes,
@@ -82,7 +82,7 @@ function bianji(row) { //点击编辑的时候获取信息
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Check/SaveCheckObject?Token=" + token + "",
+            url: "***",
             data: {
                 CheckObjectId: id,
                 CheckObjectCode: b_code,
@@ -116,13 +116,13 @@ function del(rows) { //点击删除的时候获取id
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Check/DelCheckObject/" + id + "?Token=" + token + "",
+            url: "***",
             data: {
                 id: id
             },
             dataType: "json",
             success: function(data, status) {
-              alert(data.Message)
+                alert(data.Message)
                 location.reload() //刷新页面
             },
             error: function(e) {
@@ -138,7 +138,7 @@ function del(rows) { //点击删除的时候获取id
 $.ajax({ //循环中继器*****************************************************/**/ok */
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Repeater/GetRepeaterList?Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -157,7 +157,7 @@ $.ajax({ //循环中继器*****************************************************/
 $.ajax({ //循环中继器*****************************************************/**/ok */
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Repeater/GetRepeaterList?Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {

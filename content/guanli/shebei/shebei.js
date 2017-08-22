@@ -2,7 +2,7 @@ var depId = localStorage.getItem('depId');
 $.ajax({ //页面加载
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Temp/GetTempListByDepartment?depId=" + depId + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -20,7 +20,7 @@ $.ajax({ //页面加载
             $.ajax({
                 type: "GET",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/Repeater/GetRepeater/" + subuzhongjiqi + "?Token=" + token + "",
+                url: "***",
                 data: {},
                 async: false,
                 dataType: "json",
@@ -66,7 +66,7 @@ $(".tainjia").click(function() { //新建点击确定的时候收集的信息
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Temp/SaveTemp?Token=" + token + "",
+        url: "***",
         data: { TempCode: codes, TempName: wdname, TempRepeaterId: zhongjiqi, TempMemo: bz, TempPosition: tongdao },
         dataType: "json",
         success: function(data, status) {
@@ -102,7 +102,7 @@ function bianji(row) { //点击编辑的时候获取信息
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Temp/SaveTemp?Token=" + token + "",
+            url: "***",
             data: { TempId: id, TempCode: b_code, TempName: b_bmname, TempRepeaterId: b_zhongjiqi, TempMemo: b_bz, TempPosition: b_tongdao },
             dataType: "json",
             success: function(data, status) {
@@ -128,7 +128,7 @@ function del(rows) { //点击删除的时候获取id
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Temp/DelTemp/" + id + "?Token=" + token + "",
+            url: "***",
             data: {},
             dataType: "json",
             success: function(data, status) {

@@ -146,7 +146,7 @@
           $.ajax({
               type: "GET",
               contentType: "application/x-www-form-urlencoded",
-              url: "" + url + "/api/Department/GetDep/" + gongsinameid + "?Token=" + token + "",
+              url: "***",
               data: {},
               dataType: "json",
               success: function(data, status) {

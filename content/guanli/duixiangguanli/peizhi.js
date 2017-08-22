@@ -1,7 +1,7 @@
 ﻿$.ajax({ //根据部门id请求他的中继器
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Repeater/GetRepeaterList?DepId=" + depId + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -13,7 +13,7 @@
         $.ajax({
             type: "GET",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Temp/GetTempListByRepeter?RepId=" + RepeaterId + "&Token=" + token + "",
+            url: "***",
             data: {},
             dataType: "json",
             success: function(data, status) {
@@ -39,7 +39,7 @@ $(".xunhuangonsi3").change(function() { //下拉框改变事件
     $.ajax({
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Temp/GetTempListByRepeter?RepId=" + RepeaterId + "&Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         success: function(data, status) {
@@ -67,7 +67,7 @@ function pl() {
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Check/SetTemps?Token=" + token + "",
+        url: "***",
         data: { CheckObjId: LSDXid, TempIds: shuzu },
         dataType: "json",
         success: function(data, status) {
@@ -76,7 +76,7 @@ function pl() {
             $.ajax({
                 type: "GET",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/Check/GetTemps?CheckObjId=" + LSDXid + "&Token=" + token + "",
+                url: "***",
                 data: {},
                 dataType: "json",
                 success: function(data, status) {
@@ -84,7 +84,7 @@ function pl() {
                         $.ajax({
                             type: "GET",
                             contentType: "application/x-www-form-urlencoded",
-                            url: "" + url + "/api/Temp/GetTemp/" + data.Data[i] + "?Token=" + token + "",
+                            url: "***",
                             data: {},
                             dataType: "json",
                             success: function(data, status) {
@@ -110,26 +110,6 @@ function pl() {
         complete: function() {}
     });
 
-
-    // $("#before").text("")
-    // var RepeaterId = $(".xunhuangonsi3").val();
-    // $.ajax({
-    //     type: "GET",
-    //     contentType: "application/x-www-form-urlencoded",
-    //     url: "" + url + "/api/Temp/GetTempListByRepeter?RepId=" + RepeaterId + "&Token=" + token + "",
-    //     data: {},
-    //     dataType: "json",
-    //     success: function(data, status) {
-    //         for (var i = 0; i < data.Data.length; i++) {
-    //             var aa = $("<li value=" + data.Data[i].TempId + "  onclick='left_xzxm(this)'>" + data.Data[i].TempName + "</li>");
-    //             aa.appendTo("#before");
-    //         }
-    //     },
-    //     error: function(e) {
-    //         alert("请求失败!");
-    //     },
-    //     complete: function() {}
-    // });
 }
 
 function left_xzxm(com) {
@@ -171,7 +151,7 @@ $("#left").click(function() {
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Check/SetTemps?Token=" + token + "",
+        url: "***",
         data: { CheckObjId: LSDXid, TempIds: shuzu },
         dataType: "json",
         success: function(data, status) {
@@ -190,14 +170,14 @@ $("#left").click(function() {
 
 
 function peizhi(row) {
-     window.parent.zhezhao2()
+    window.parent.zhezhao2()
     var id = $(row).parent().siblings().eq(4).html();
     LSDXid = id;
     $("#after").text("")
     $.ajax({
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Check/GetTemps?CheckObjId=" + id + "&Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         success: function(data, status) {
@@ -206,7 +186,7 @@ function peizhi(row) {
                 $.ajax({
                     type: "GET",
                     contentType: "application/x-www-form-urlencoded",
-                    url: "" + url + "/api/Temp/GetTemp/" + data.Data[i] + "?Token=" + token + "",
+                    url: "***",
                     data: {},
                     dataType: "json",
                     success: function(data, status) {
@@ -236,7 +216,7 @@ function peizhi(row) {
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Check/SetTemps?Token=" + token + "",
+            url: "***",
             data: { CheckObjId: id, TempIds: shuzu },
             dataType: "json",
             success: function(data, status) {

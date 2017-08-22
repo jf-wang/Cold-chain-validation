@@ -2,7 +2,7 @@ var depId = localStorage.getItem('depId');
 $.ajax({ //获取对象列表
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Check/GetCheckObjectList?DepId=" + depId + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {

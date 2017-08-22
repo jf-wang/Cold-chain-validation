@@ -2,7 +2,7 @@
 
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Temp/GetRealtimeData?DepId=" + depId + "&CheckObjId=&RepeaterId=&TempId=&Token=" + token + "",
+    url: "***",
     data: {},
     async: false,
     dataType: "json",
@@ -69,7 +69,7 @@ $(".yanzhzengduixiang").change(function() {
     $.ajax({ //页面加载
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Temp/GetRealtimeData?DepId=" + depId + "&CheckObjId=" + yanzhengduxiang + "&RepeaterId=&TempId=&Token=" + token + "",
+        url: "***",
         data: {},
         async: false,
         dataType: "json",
@@ -139,7 +139,7 @@ function DSshuaxin() {
     $.ajax({ //页面加载
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Temp/GetRealtimeData?DepId=" + depId + "&CheckObjId=" + yanzhengduxiang + "&RepeaterId=&TempId=&Token=" + token + "",
+        url: "***",
         data: {},
         async: false,
         dataType: "json",

@@ -10,7 +10,7 @@ var uesrName = localStorage.getItem("userName");
 $.ajax({ //请求用户id******************************************************/**/ok */
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/User/GetUser?userId=" + uesrName + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -34,7 +34,7 @@ $(".head_btn").click(function() { //请求村存时间间隔
     $.ajax({
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Department/GetHistorySaveInterval?DepId=" + depId + "&Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         success: function(data, status) {
@@ -49,7 +49,7 @@ $(".tainjia").click(function() {
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Department/SaveHistorySaveInterval?Token=" + token + "",
+        url: "***",
         data: { DepId: depId, Interval: time },
         dataType: "json",
         success: function(data, status) {

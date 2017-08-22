@@ -2,7 +2,7 @@
   $.ajax({ //获取对象列表
       type: "GET",
       contentType: "application/x-www-form-urlencoded",
-      url: "" + url + "/api/Check/GetCheckObjectList?DepId=" + depId + "&Token=" + token + "",
+      url: "***",
       data: {},
       dataType: "json",
       success: function(data, status) {
@@ -20,7 +20,7 @@
   $.ajax({ //****************************************************/**/ok */
       type: "GET",
       contentType: "application/x-www-form-urlencoded",
-      url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+      url: "***",
       data: {},
       dataType: "json",
       success: function(data, status) {
@@ -48,7 +48,7 @@
       $.ajax({
           type: "GET",
           contentType: "application/x-www-form-urlencoded",
-          url: "" + url + "/api/Check/GetTemps?CheckObjId=" + id + "&Token=" + token + "",
+          url: "***",
           data: {},
           dataType: "json",
           success: function(data, status) {
@@ -56,7 +56,7 @@
                   $.ajax({
                       type: "GET",
                       contentType: "application/x-www-form-urlencoded",
-                      url: "" + url + "/api/Temp/GetTemp/" + data.Data[i] + "?Token=" + token + "",
+                      url: "***",
                       data: {},
                       dataType: "json",
                       success: function(data, status) {
@@ -73,7 +73,7 @@
               $.ajax({
                   type: "GET",
                   contentType: "application/x-www-form-urlencoded",
-                  url: "" + url + "/api/Temp/GetHistoryData?DepId=" + depId + "&ObjId=" + id + "&StartDate=" + StartDate + "&EndDate=" + EndDate + "&Page=" + page + "&Size=10&Token=" + token + "",
+                  url: "***",
                   data: {},
                   dataType: "json",
                   success: function(data, status) {

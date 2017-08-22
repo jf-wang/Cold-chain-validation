@@ -2,7 +2,7 @@
 $.ajax({ //根据部门id请求他的中继器ok
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Repeater/GetRepeaterList?DepId=" + depId + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -14,7 +14,7 @@ $.ajax({ //根据部门id请求他的中继器ok
         $.ajax({
             type: "GET",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Temp/GetTempListByRepeter?RepId=" + RepeaterId + "&Token=" + token + "",
+            url: "***",
             data: {},
             dataType: "json",
             success: function(data, status) {
@@ -67,7 +67,7 @@ $(".zhongjiqi").change(function() { //下拉框改变事件ok
     $.ajax({
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Temp/GetTempListByRepeter?RepId=" + RepeaterId + "&Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         success: function(data, status) {
@@ -118,7 +118,7 @@ $(".tainjia").click(function() { //新建ok
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Temp/SaveTemp?Token=" + token + "",
+        url: "***",
         data: {
             TempName: name,
             TempRepeaterId: TempRepeaterId,
@@ -130,7 +130,7 @@ $(".tainjia").click(function() { //新建ok
         },
         dataType: "json",
         success: function(data, status) {
-             location.reload() //刷新页面
+            location.reload() //刷新页面
         },
         error: function(e) {
             alert("请求失败!");
@@ -165,7 +165,7 @@ function bianji(row) { //编辑ok
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Temp/SaveTemp?Token=" + token + "",
+            url: "***",
             data: {
                 TempName: b_name,
                 TempRepeaterId: RepeaterId,
@@ -195,7 +195,7 @@ function del(rows) {
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Temp/DelTemp/" + id + "?Token=" + token + "",
+            url: "***",
             data: {},
             dataType: "json",
             success: function(data, status) {
@@ -223,7 +223,7 @@ $(".tainjia_oll").click(function() {
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Temp/SaveTemp?Token=" + token + "",
+            url: "***",
             data: {
                 TempName: qishibianhao,
                 TempRepeaterId: TempRepeaterId,
@@ -267,7 +267,7 @@ $(".del_oll").click(function() { //批量删除
             $.ajax({
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/Temp/DelTemp/" + oInput[i].value + "?Token=" + token + "",
+                url: "***",
                 data: {},
                 dataType: "json",
                 success: function(data, status) {

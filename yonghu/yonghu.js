@@ -2,7 +2,7 @@
     $.ajax({ //页面加载/*************************ok */
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/User/GetUserList/?Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         async: false,
@@ -22,7 +22,7 @@
                 $.ajax({
                     type: "GET",
                     contentType: "application/x-www-form-urlencoded",
-                    url: "" + url + "/api/Department/GetDep/" + bmid + "?Token=" + token + "",
+                    url: "***",
                     data: {},
                     async: false,
                     dataType: "json",
@@ -38,7 +38,7 @@
                 $.ajax({
                     type: "GET",
                     contentType: "application/x-www-form-urlencoded",
-                    url: "" + url + "/api/User/GetManageDeps?userId=" + username + "&Token=" + token + "",
+                    url: "***",
                     data: {},
                     async: false,
                     dataType: "json",
@@ -99,7 +99,7 @@ jiazai(); //执行下函数
 $.ajax({ //循环公司*****************************************************/**/ok */
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Department/GetDepList?Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -119,7 +119,7 @@ $.ajax({ //循环公司*****************************************************/**/
 $.ajax({ //循环公司*****************************************************/**/ok */
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Department/GetDepList?Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -146,7 +146,7 @@ $(".tainjia_xinzeng").click(function() { //新建点击确定的时候收集的�
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/User/SaveUser?Token=" + token + "",
+            url: "***",
             data: {
                 UserId: username,
                 UserName: name,
@@ -191,7 +191,7 @@ function bianji(row) { //点击编辑的时候获取信息/************有bug */
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/User/SaveUser?Token=" + token + "",
+            url: "***",
             data: {
                 UserId: b_username,
                 UserName: b_bmname,
@@ -221,7 +221,7 @@ function del(rows) { //点击删除的时候获取id/************************ok 
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/User/DelUser/" + id + "?Token=" + token + "",
+            url: "***",
             data: {
                 id: id
             },
@@ -249,7 +249,7 @@ function mima(row) {
             $.ajax({
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/Account/ChangePassword?Token=" + token + "",
+                url: "***",
                 data: {
                     UserId: username,
                     NewPassword: pwd2,
@@ -259,7 +259,7 @@ function mima(row) {
                 success: function(data, status) {
                     alert(data.Message)
                         // console.log(data)
-location.reload() //刷新页面 
+                    location.reload() //刷新页面 
                 },
                 error: function(e) {
                     alert("用户管理加载失败!");

@@ -3,17 +3,17 @@ var userdepid = ''
 $.ajax({ // 页面加载获取用户ID
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/User/GetUser?userId=" + userid + "&Token=" + token + "",
+    url: "***",
     data: {},
     async: false, //关闭异步
     dataType: "json",
-    success: function (data, status) {
+    success: function(data, status) {
         userdepid = data.Data.UserDepId
     },
-    error: function (e) {
+    error: function(e) {
         alert("111!");
     },
-    complete: function () {
+    complete: function() {
 
     }
 });
@@ -48,10 +48,10 @@ var year = $('.year').val()
 $.ajax({ // 页面加载生成对应用户ID内容
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/Employee/GetEmployee?DepId=" + userdepid + "&Year=" + year + "&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
-    success: function (data, status) {
+    success: function(data, status) {
         // var nowYear = data.Data.EmployeeYear
         // var ds = JSON.parse(data.Data.EmployeeData);
         // console.log(ds)
@@ -70,7 +70,7 @@ $.ajax({ // 页面加载生成对应用户ID内容
                 var ds = JSON.parse(data.Data.EmployeeData);
                 // console.log(ds.lengku)
                 renyuanxinxi.bumen = ds.bumen
-                // console.log(ds.bumen)
+                    // console.log(ds.bumen)
                 renyuanxinxi.gongsi = ds.gongsi
                 renyuanxinxi.year = ds.year
                 var nowYear = data.Data.EmployeeYear
@@ -144,18 +144,18 @@ $.ajax({ // 页面加载生成对应用户ID内容
         wctime.appendTo('.zhibiao_year')
         shuangji()
     },
-    error: function (e) {
+    error: function(e) {
         alert("222!");
         console.log(this.url)
     },
-    complete: function () {
+    complete: function() {
 
     }
 });
 
 
-var gaibian = function () {
-    $('.year').change(function () { //年份改变生成数据
+var gaibian = function() {
+    $('.year').change(function() { //年份改变生成数据
         year = $('.year').val()
         var myDate = new Date();
         var month = myDate.getMonth()
@@ -164,10 +164,10 @@ var gaibian = function () {
         $.ajax({ // 页面加载生成对应用户ID内容
             type: "GET",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Employee/GetEmployee?DepId=" + userdepid + "&Year=" + year + "&Token=" + token + "",
+            url: "***",
             data: {},
             dataType: "json",
-            success: function (data, status) {
+            success: function(data, status) {
                 console.log(data.Data)
 
                 if (data.Data != null) {
@@ -243,7 +243,7 @@ var gaibian = function () {
                                 "</tr>");
                             wc.appendTo(".table_4 .tbody");
                         }
-                    } 
+                    }
 
                     $('.zhibiao_year').text('')
                     var wctime = $("<tr>" +
@@ -306,11 +306,11 @@ var gaibian = function () {
 
                 shuangji()
             },
-            error: function (e) {
+            error: function(e) {
                 alert("222!");
                 console.log(this.url)
             },
-            complete: function () {
+            complete: function() {
 
             }
         });
@@ -318,8 +318,8 @@ var gaibian = function () {
 }
 gaibian()
 
-$(".save").click(function () { //点击 保存 编辑的数据
-    $('#table_1 .tbody tr').each(function () { //获取 冷库 数据
+$(".save").click(function() { //点击 保存 编辑的数据
+    $('#table_1 .tbody tr').each(function() { //获取 冷库 数据
         var xiangmu = $(this).find('td:nth(0)').text(); // 获取项目名称
         var neirong = $(this).find('td:nth(1)').text(); // 获取内容
         renyuanxinxi.lengku.push({
@@ -327,7 +327,7 @@ $(".save").click(function () { //点击 保存 编辑的数据
             content: neirong
         });
     });
-    $('#table_2 .tbody tr').each(function () { //获取 保温箱 数据
+    $('#table_2 .tbody tr').each(function() { //获取 保温箱 数据
         var xiangmu = $(this).find('td:nth(0)').text(); // 获取项目名称
         var neirong = $(this).find('td:nth(1)').text(); // 获取内容
         renyuanxinxi.baowenxiang.push({
@@ -335,7 +335,7 @@ $(".save").click(function () { //点击 保存 编辑的数据
             content: neirong
         });
     });
-    $('#table_3 .tbody tr').each(function () { //获取 冷藏车 数据
+    $('#table_3 .tbody tr').each(function() { //获取 冷藏车 数据
         var xiangmu = $(this).find('td:nth(0)').text(); // 获取项目名称
         var neirong = $(this).find('td:nth(1)').text(); // 获取内容
         renyuanxinxi.lengcangche.push({
@@ -343,7 +343,7 @@ $(".save").click(function () { //点击 保存 编辑的数据
             content: neirong
         });
     });
-    $('#table_4 .tbody tr').each(function () { //获取 阴凉柜 数据
+    $('#table_4 .tbody tr').each(function() { //获取 阴凉柜 数据
         var xiangmu = $(this).find('td:nth(0)').text(); // 获取项目名称
         var neirong = $(this).find('td:nth(1)').text(); // 获取内容
         renyuanxinxi.yinlianggui.push({
@@ -355,23 +355,23 @@ $(".save").click(function () { //点击 保存 编辑的数据
     $.ajax({
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Employee/SaveEmpolyee?Token=" + token + "",
+        url: "***",
         data: {
             EmployeeDepId: userdepid,
             EmployeeYear: year,
             EmployeeData: datas
         },
         dataType: "json",
-        success: function (data, status) {
+        success: function(data, status) {
             console.log(year)
             console.log(data, status)
             location.reload() //刷新页面
         },
-        error: function (e) {
+        error: function(e) {
             alert("111!");
             console.log(this.url)
         },
-        complete: function () {
+        complete: function() {
 
         }
     });

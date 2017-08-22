@@ -4,7 +4,7 @@ var uesrName = localStorage.getItem("userName");
 $.ajax({
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
-    url: "" + url + "/api/User/GetUser?userId=" + uesrName + "&Token=" + token + "",
+    url: "***",
     data: {},
     async: false,
     dataType: "json",
@@ -14,7 +14,7 @@ $.ajax({
             $.ajax({
                 type: "GET",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/Department/GetDepList?Token=" + token + "",
+                url: "***",
                 data: {},
                 async: false,
                 dataType: "json",
@@ -25,7 +25,7 @@ $.ajax({
                         $.ajax({ //循环公司*****************************************************/**/ok */
                             type: "GET",
                             contentType: "application/x-www-form-urlencoded",
-                            url: "" + url + "/api/Department/GetDep/" + data.Data[i].DepId + "?Token=" + token + "",
+                            url: "***",
                             data: {},
                             dataType: "json",
                             success: function(data, status) {
@@ -70,7 +70,7 @@ $.ajax({
             $.ajax({
                 type: "GET",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/User/GetManageDeps?userId=" + uesrName + "&Token=" + token + "",
+                url: "***",
                 data: {},
                 dataType: "json",
                 success: function(data, status) {
@@ -81,7 +81,7 @@ $.ajax({
                         $.ajax({ //循环公司*****************************************************/**/ok */
                             type: "GET",
                             contentType: "application/x-www-form-urlencoded",
-                            url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+                            url: "***",
                             data: {},
                             dataType: "json",
                             success: function(data, status) {
@@ -144,11 +144,11 @@ $(".tainjia").click(function() { //新建点击确定的时候收集的信息//*
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Department/SaveDep?Token=" + token + "",
+            url: "***",
             data: { DepCode: code, DepName: bmname, DepOwner: lianxiren, DepContact: phone, DepMemo: bz },
             dataType: "json",
             success: function(data, status) {
- alert(data.Message)
+                alert(data.Message)
                 location.reload() //刷新页面
                 console.log
             },
@@ -187,11 +187,11 @@ function bianji(row) { //点击编辑的时候获取信息/**************/ok */
             $.ajax({
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",
-                url: "" + url + "/api/Department/SaveDep?Token=" + token + "",
+                url: "***",
                 data: { DepId: id, DepCode: b_code, DepName: b_bmname, DepOwner: b_lainxiren, DepContact: b_phone, DepMemo: b_bz },
                 dataType: "json",
                 success: function(data, status) {
- alert(data.Message)
+                    alert(data.Message)
                     location.reload() //刷新页面
                 },
                 error: function(e) {
@@ -210,7 +210,7 @@ function bianji(row) { //点击编辑的时候获取信息/**************/ok */
         formData.append("UploadedImage", $("#fileUpload")[0].files[0]);
         // console.log(formData);
         $.ajax({
-            url: "" + url + "/api/Logo/UploadFile?DepId=" + id + "&Token=" + token + "",
+            url: "***",
             type: 'POST',
             cache: false,
             data: formData,
@@ -219,7 +219,7 @@ function bianji(row) { //点击编辑的时候获取信息/**************/ok */
             // 告诉jQuery不要去设置Content-Type请求头
             contentType: false,
             success: function(data, ststus) {
- alert(data.Message)
+                alert(data.Message)
             },
             error: function(responseStr) {
                 console.log("error");
@@ -239,11 +239,11 @@ function del(rows) { //点击删除的时候获取id/**************/ok */
         $.ajax({
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
-            url: "" + url + "/api/Department/DelDep/" + id + "?Token=" + token + "",
+            url: "***",
             data: {},
             dataType: "json",
             success: function(data, status) {
-                 alert(data.Message);
+                alert(data.Message);
                 location.reload() //刷新页面
             },
             error: function(e) {

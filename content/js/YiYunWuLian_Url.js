@@ -1,4 +1,4 @@
-var url = "http://121.42.30.247:8020";
+var url = "***";
 var token = localStorage.getItem("token");
 var depId = localStorage.getItem('depId');
 var UserRole = localStorage.getItem("UserRole")

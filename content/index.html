@@ -115,12 +115,12 @@
 <script src="./layui.js" charset="utf-8"></script>
 <script>
     depId = localStorage.getItem("depId");
-    var img = $("<img src='" + url + "/api/Logo/GetLogo?DepId=" + depId + "' class='gongsologo' >");
+    var img = $("<img src='***' class='gongsologo' >");
     img.appendTo(".head_left")
     $.ajax({ //****************************************************/**/ok */
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
-        url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         success: function(data, status) {

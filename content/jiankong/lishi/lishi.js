@@ -2,7 +2,7 @@ $.ajax({ //页面加载
     type: "GET",
     contentType: "application/x-www-form-urlencoded",
     // url: "" + url + "/api/Temp/GetRealtimeData?DepId=&RepeaterId=&TempId=&Token=" + token + "",
-    url: "" + url + "/api/Temp/GetHistoryData?DepId=&RepeaterId=&TempId=&startDate=2017-07-24 00:00:00&endDate=2017-07-25 23:59:59&Token=" + token + "",
+    url: "***",
     data: {},
     dataType: "json",
     success: function(data, status) {
@@ -28,7 +28,7 @@ $(".yulan").click(function() {
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
         // url: "" + url + "/api/Temp/GetRealtimeData?DepId=&RepeaterId=&TempId=&Token=" + token + "",
-        url: "" + url + "/api/Temp/GetHistoryData?DepId=" + DepId + "&RepeaterId=" + RepeaterId + "&TempId=" + TempId + "&startDate=2017-07-24 00:00:00&endDate=2017-07-25 23:59:59&Token=" + token + "",
+        url: "***",
         data: {},
         dataType: "json",
         success: function(data, status) {

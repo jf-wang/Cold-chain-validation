@@ -2,11 +2,11 @@
  $.ajax({ //页面加载/***/ok */
      type: "GET",
      contentType: "application/x-www-form-urlencoded",
-     url: "" + url + "/api/Repeater/GetRepeaterList?DepId=" + depId + "&Token=" + token + "",
+     url: "***",
      data: {},
      dataType: "json",
      success: function(data, status) {
-        //  console.log(data,status)
+         //  console.log(data,status)
          $(".number").text(data.Data.length)
          for (var i = 0; i < data.Data.length; i++) {
              var code = data.Data[i].RepeaterCode;
@@ -32,7 +32,7 @@
      complete: function() {}
  });
  $(".tainjia").click(function() { //新建点击确定的时候收集的信息/**/ok */
-    //  window.parent.zhezhao2()
+     //  window.parent.zhezhao2()
      var code = $(".xinjina_bianhao").val(); //编号
      var wdname = $(".xinjina_name").val(); //温度卡片名称
      //  var lianxiren = $(".quanxian2").val(); //所属公司
@@ -40,16 +40,16 @@
      $.ajax({
          type: "POST",
          contentType: "application/x-www-form-urlencoded",
-         url: "" + url + "/api/Repeater/SaveRepeater?Token=" + token + "",
+         url: "***",
          data: { RepeaterCode: code, RepeaterName: wdname, RepeaterDepId: depId, RepeaterMemo: bz },
          dataType: "json",
          success: function(data, status) {
-            if (data.Message == "保存失败。could not execute batch command.[SQL: SQL not available]") {
-                     alert("中继器编号不能重复")
-                     location.reload() //刷新页面
-                 } else {
-                     location.reload() //刷新页面
-                 }
+             if (data.Message == "保存失败。could not execute batch command.[SQL: SQL not available]") {
+                 alert("中继器编号不能重复")
+                 location.reload() //刷新页面
+             } else {
+                 location.reload() //刷新页面
+             }
          },
          error: function(e) {
              alert("增加中继器请求失败!");
@@ -79,7 +79,7 @@
          $.ajax({
              type: "POST",
              contentType: "application/x-www-form-urlencoded",
-             url: "" + url + "/api/Repeater/SaveRepeater?Token=" + token + "",
+             url: "***",
              data: { RepeaterId: id, RepeaterDepId: depId, RepeaterCode: b_code, RepeaterName: b_bmname, RepeaterMemo: b_bz },
              dataType: "json",
              success: function(data, status) {
@@ -105,11 +105,11 @@
      window.parent.zhezhao2()
      var id = $(rows).parent().siblings().eq(3).html();
      $(".queding_del").click(function() { //确定删除的时候
-        console.log(id)
+         console.log(id)
          $.ajax({
              type: "POST",
              contentType: "application/x-www-form-urlencoded",
-             url: "" + url + "/api/Repeater/DelRepeater/" + id + "?Token=" + token + "",
+             url: "***",
              data: {},
              dataType: "json",
              success: function(data, status) {
