@@ -5,7 +5,7 @@
 [登录地址](http://121.42.30.247:85)
 
 ![demo](https://raw.githubusercontent.com/jf-wang/Cold-chain-validation/master/example/login.png)
-![demo](https://raw.githubusercontent.com/jf-wang/Cold-chain-validation/master/example/总览.jpg)
+![demo](https://raw.githubusercontent.com/jf-wang/Cold-chain-validation/master/example/shishishuju.png)
 ![demo](https://raw.githubusercontent.com/jf-wang/Cold-chain-validation/master/example/用户管理-选择公司.jpg)
 ![demo](https://raw.githubusercontent.com/jf-wang/Cold-chain-validation/master/example/总览.jpg)
 ![demo](https://raw.githubusercontent.com/jf-wang/Cold-chain-validation/master/example/lishishuju.png)
