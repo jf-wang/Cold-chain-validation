@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证数据</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/jedate.css">
+    <link rel="stylesheet" href="./shuju.css">
+
+    <style>
+        @media print {
+            .noprint {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noprint">
+        <div class="head">
+            <div style="display:flex; flex-direction:row;">
+                <div class=" flex-item ">
+                    <span>验证对象</span><span class="maohao">:</span>
+                    <select name="" class="xunhunazhongjiqi">
+                        <!-- <option value="">冷库1</option> -->
+                    <select>
+                </div>
+                <div class=" flex-item ">
+                    <span>日期</span><span class="maohao">:</span>
+                    <input class="datainp" id="dateinfo4" type="text" placeholder="请选择" readonly>-
+                    <input class="datainp" id="dateinfo5" type="text" placeholder="请选择" readonly>
+                    <input class="datainp" id="dateinfo6" type="text" placeholder="请选择" readonly style="display:none">
+                </div>
+                <div class=" flex-item ">
+                    <span class="yulan" >查询</span>
+                </div>
+                <div class=" flex-item ">
+                    <span class="dayin" onclick="javascript:printit('div1','print');">打印</span>
+                </div>
+                <div class=" flex-item ">
+                    <span class="daochu"  onclick="javascript:method1('table')">导出</span>
+                    <OBJECT classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2" height="0" id="WebBrowser" width="0" VIEWASTEXT></OBJECT> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='div1'>
+        <div class="con" id="table">
+            <h4 style="margin:20px 250px;" class="gongsi"></h4>
+            <table class="table1" border="1" cellspacing="0" cellpadding="0" >
+                <thead>
+                    <tr>
+                        <th colspan="10" style="text-align:center" class="biaotou"></th>
+                    </tr>
+                    <tr class="tr">
+                        <th>日期</th>
+                        
+                    </tr> 
+                </thead>
+                <tbody>
+            
+                </tbody>
+                            
+                
+            </table>
+            <div class="shijian">
+                <span>制表时间</span>
+                <span class="maohao">:</span>
+                <span class="now_time"></span>
+            </div>
+        </div>
+    </div>
+    <div class="pages">
+        <span class="toppage">上一页</span>
+        <span class="bottompage">下一页</span>
+    </div>
+</body>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script src="../../js/YiYunWuLian_Url.js"></script>
+<script src="../../js/jedate.js"></script>
+<script src="./shuju.js"></script>
+<script src="./dayin_daochu.js"></script>
+<!-- <script src="../shishi/xunhuan.js"></script> -->
+</html>

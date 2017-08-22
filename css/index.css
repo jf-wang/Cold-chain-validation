@@ -20,7 +20,7 @@ ul li {
     height: 50px;
     background: url("../img/logo.png") no-repeat;
     float: left;
-    margin: 20px 65px 0 20px;
+    margin: 20px 76px 0 20px;
 }
 
 .head_cont {
@@ -91,16 +91,16 @@ ul li {
 }
 
 .jiankong {
-    background: url("../img/jiankong.png") no-repeat;
-    width: 22px;
-    height: 20px;
+    background: url("../img/zonglan.png") no-repeat;
+    width: 23px;
+    height: 22px;
     display: inline-block;
     float: left;
     margin: 11px 15px 12px 0;
 }
 
 .guanli {
-    background: url("../img/guanli.png") no-repeat;
+    background: url("../img/gongsi.png") no-repeat;
     width: 22px;
     height: 22px;
     display: inline-block;
@@ -109,8 +109,8 @@ ul li {
 }
 
 .xinxi {
-    background: url("../img/xinxi.png") no-repeat;
-    width: 18px;
+    background: url("../img/guanli.png") no-repeat;
+    width: 22px;
     height: 22px;
     display: inline-block;
     float: left;
@@ -163,4 +163,22 @@ ul li {
 #iframeMain {
     height: 100%;
     width: 100%;
+}
+
+.zhezhao2 {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    opacity: 0.5;
+    /*兼容IE8及以下版本浏览器*/
+    /* filter: alpha(opacity=30); */
+    display: none;
+}
+
+.btn {
+    z-index: 6000
 }

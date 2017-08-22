@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>中易云（唐山）物联网有限公司冷链验证</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./css/layui.css" media="all">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index_900.css">
+</head>
+
+<body>
+    <div class="zhezhao"></div>
+    <div class="head">
+        <div class="head_left">
+            <!-- <img src="../img/logo_lizi.png" alt="" style="height:72px;"> -->
+        </div>
+        <div class="head_cont">
+            <!-- <img src="" alt=""> -->
+            <span class="gongsiming"></span><span>冷链验证平台</span>
+        </div>
+        <div class="head_off" title="退出登录">
+            <img src="./img/off.png" alt="" title="退出登录">
+        </div>
+        <!-- <div class="denglukaung">
+            
+            <ul class="denglu">
+                <li><a href="">这是啥</a></li>
+                <li><a href="">我不知道</a></li>
+                <li><a href="">俺也不知道</a></li>
+                <li><a href="./login.html">退出登录</a></li>
+            </ul>
+        </div> -->
+    </div>
+    <div id="sideBar">
+        <ul class="layui-nav layui-nav-tree big_ul" lay-filter="demo">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;" target="iframeMain" id="show" style="font-size:18px"><i ></i></a>
+            </li>
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;" target="iframeMain"><i class="daohang"></i>导航菜单</a>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="./jiankong/shishi/shishishuju.html" target="iframeMain"><i class="jiankong"></i>实时数据</a>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="javascript:;"><i class="xinxi"></i>验证信息管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="./yanzhengxinxi/yanzhengshuju/shuju.html" style="margin-left:37px;" target="iframeMain">验证数据</a></dd>
+                    <dd><a href="./yanzhengxinxi/renyuanxinxi/renyuan.html" style="margin-left:37px;" target="iframeMain">验证人员信息</a></dd>
+                    <dd><a href="./yanzhengxinxi/yanzhengduixiang/yanzheng.html" style="margin-left:37px;" target="iframeMain">验证对像信息</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="javascript:;"><i class="guanli"></i>管理</a>
+                <dl class="layui-nav-child">
+                    <!-- <dd><a href="./guanli/bumenguanli/bumen.html" style="margin-left:37px;" target="iframeMain">公司管理</a></dd> -->
+                    <dd><a href="./guanli/zhongjiqi/zhongjiqi.html" style="margin-left:37px;" target="iframeMain">中继器管理</a></dd>
+                    <dd><a href="./guanli/shebei/shebei.html" style="margin-left:37px;" target="iframeMain">设备管理</a></dd>
+                    <dd><a href="./guanli/duixiangguanli/duixiangguanli.html" style="margin-left:37px;" target="iframeMain">验证对象管理</a></dd>
+                    <dd><span class="head_btn" data-toggle="modal" data-target="#myModal_xinjian">设置采集间隔</span></dd>
+                    <!-- <dd><a href="./guanli/yonghu/yonghu.html" style="margin-left:37px;" target="iframeMain">用户管理</a></dd> -->
+
+                </dl>
+            </li>
+            <!-- <li class="layui-nav-item ">
+                <a href="javascript:;"><i class="shezhi"></i>设置</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="./mimaxiugai/mimaxiugai.html" style="margin-left:37px;" target="iframeMain">密码修改</a></dd>
+                </dl>
+            </li> -->
+        </ul>
+    </div>
+
+    <!-------------------------------------设置采集间隔 模态框-------------------------------------->
+    <div class="modal fade" id="myModal_xinjian" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document" style="width:485px;height:330px;">
+            <div class="modal-content myModal">
+                <div class="modal-header" style="border:0">
+                    <h4 class="modal-title" id="myModalLabel" style="text-align: center;">设置</h4>
+                </div>
+                <div class="modal-body" style="margin: 0 44px 0 30px;    padding: 0px;">
+                    <div style="display:flex; flex-direction:column;">
+                        <div class="flex-item">
+                            <span style="margin-left:30px">数据间隔</span><span class="maohao">:</span>
+                            <input type="text" class="shujujiange" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();"><span style="margin-left:6px">分钟</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border:0">
+                    <span class="tainjia" data-dismiss="modal">保存</span>
+                    <span class="quxiao" data-dismiss="modal">关闭</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <iframe id="iframeMain" name="iframeMain" frameborder="0" src="./jiankong/shishi/shishishuju.html"></iframe>
+    </div>
+    <div class="footer">
+        <div class="img">
+            <span class="gongsiming" style="color:white"></span>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script src="./js/YiYunWuLian_Url.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/index.js"></script>
+<script src="./layui.js" charset="utf-8"></script>
+<script>
+    depId = localStorage.getItem("depId");
+    var img = $("<img src='" + url + "/api/Logo/GetLogo?DepId=" + depId + "' class='gongsologo' >");
+    img.appendTo(".head_left")
+    $.ajax({ //****************************************************/**/ok */
+        type: "GET",
+        contentType: "application/x-www-form-urlencoded",
+        url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+        data: {},
+        dataType: "json",
+        success: function(data, status) {
+            $(".gongsiming").text(data.Data.DepName);
+            document.title = data.Data.DepName;
+            $(".footersize").text(data.Data.DepName);
+        },
+        error: function(e) {
+            alert("公司列表请求失败!");
+        },
+        complete: function() {}
+    });
+</script>
+<script>
+    layui.use('element', function() {
+        var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
+    });
+    var show = document.getElementById("show");
+    setInterval(function() {
+        var time = new Date();
+        // 程序计时的月从0开始取值后+1
+        var month = time.getMonth() + 1;
+        var data = time.getDate();
+        var hours = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds()
+        if (month < 10) { //月份
+            var month2 = "0" + month;
+        } else if (Month >= 10) {
+            var month2 = month;
+        }
+        if (data < 10) { //日
+            var data2 = "0" + data;
+        } else if (data >= 10) {
+            var data2 = data;
+        }
+        if (hours < 10) { //时
+            var hours2 = "0" + hours;
+        } else if (hours >= 10) {
+            var hours2 = hours;
+        }
+        if (minutes < 10) { //分
+            var minutes2 = "0" + minutes;
+        } else if (minutes >= 10) {
+            var minutes2 = minutes;
+        }
+        if (seconds < 10) { //秒
+            var seconds2 = "0" + seconds;
+        } else if (seconds >= 10) {
+            var seconds2 = seconds;
+        }
+        var t = time.getFullYear() + "年" + month2 + "月" + data2 + "日";
+        show.innerHTML = t;
+        //    console.log(t)
+    }, 1000);
+</script>
+<script>
+    document.title = "new"
+</script>
+
+</html>

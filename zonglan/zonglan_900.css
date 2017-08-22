@@ -1,0 +1,16 @@
+@media only screen and (min-width: 970px) and (max-width: 1500px) {
+    li {
+        width: 165px;
+        height: 160px;
+        margin: 0 15px 20px 0;
+    }
+    .gongsilogo {
+        width: 165px;
+    }
+    .font {
+        width: 165px;
+    }
+    .gongsilogo img {
+        margin-left: 25px;
+    }
+}

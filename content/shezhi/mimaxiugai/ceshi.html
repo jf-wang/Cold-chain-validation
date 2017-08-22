@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试</title>
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script src="../../js/YiYunWuLian_Url.js"></script>
+</head>
+<body>
+    <input type="button" name="" value="dianji" id="btn">
+    <script>
+       $("#btn").click(function(){
+            $.ajax({
+                type: "POST",
+                    contentType: "application/x-www-form-urlencoded",
+                    url: "" + url + "/api/Account/ChangePassword?Token="+ token +"",
+                    data: {
+                        UserId: id,
+                        OldPassword: pwd1,
+                        NewPassword: pwd2
+                    },
+                    dataType: "json",
+                    success: function(data, status) {
+                       
+                        alert("111")
+                        
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        alert("2222");
+                    }
+            })
+       })
+    </script>
+</body>
+</html>

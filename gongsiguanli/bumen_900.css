@@ -1,0 +1,26 @@
+@media only screen and (min-width: 960px) and (max-width: 1500px) {
+    .table1 th:nth-child(1),
+    .table1 td:nth-child(1) {
+        width: 100px;
+    }
+    .table1 th:nth-child(2),
+    .table1 tr:nth-child(2) {
+        width: 210px;
+    }
+    .table1 th:nth-child(3),
+    .table1 tr:nth-child(3) {
+        width: 150px;
+    }
+    .table1 th:nth-child(4),
+    .table1 tr:nth-child(4) {
+        width: 200px;
+    }
+    .table1 th:nth-child(5),
+    .table1 tr:nth-child(5) {
+        width: 250px;
+    }
+    .table1 th:nth-child(6),
+    .table1 tr:nth-child(6) {
+        width: 200px;
+    }
+}

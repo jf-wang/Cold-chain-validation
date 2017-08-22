@@ -1,0 +1,7 @@
+@media only screen and (min-width: 970px) and (max-width: 1500px) {
+    .datainp,
+    select {
+        width: 120px;
+        height: 30px;
+    }
+}

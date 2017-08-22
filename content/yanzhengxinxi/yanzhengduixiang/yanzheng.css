@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px 0px 0px 20px;
+    padding: 0;
+    background: rgb(230, 230, 230);
+}
+
+table {
+    margin-top: 10px;
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+}
+
+tbody {
+    background-color: white;
+}
+
+thead td {
+    text-align: center;
+    margin: none;
+    border: none;
+}
+
+table input {
+    line-height: 26px;
+    width: 100%;
+}
+
+table td {
+    margin: none;
+    border: none;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #aaa;
+    text-align: center;
+}
+
+table tr td:last-child {
+    width: 600px;
+}
+
+table>thead>tr>th {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    background-color: #ccc;
+    text-align: center;
+}
+
+table>thead:first-child>tr:first-child>th {
+    border-top: 1px solid #aaa;
+}
+
+.hover {
+    background-color: orange;
+}
+
+.quanxian_xiangmu {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.tbody td input {
+    height: 38px;
+}
+
+.span {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background: rgb(204, 204, 204);
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 6px;
+}
+
+.span:hover {
+    background-color: rgb(65, 139, 202)
+}
+
+.year {
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 6px;
+    border: 1px solid #aaa;
+    border-radius: 1px;
+}
+.zhibiao_year {
+    background-color:rgb(230, 230, 230);
+}

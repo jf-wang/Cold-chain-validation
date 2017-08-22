@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+body {
+    margin: 20px 0px 0 20px;
+    padding: 0;
+    background: rgb(230, 230, 230);
+}
+
+li {
+    list-style-type: none;
+}
+
+.maohao {
+    margin: 0 10px;
+    color: black;
+}
+
+select {
+    width: 160px;
+    height: 30px;
+}
+
+.flex-item {
+    margin-right: 10px;
+}
+
+.shuju {
+    margin-right: 10px;
+}
+
+.ss span {
+    line-height: 30px;
+    color: black;
+}
+
+.chaxun {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background: rgb(65, 139, 202);
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cont {
+    margin-top: 20px;
+}
+
+.waike {
+    width: 250px;
+    height: 120px;
+}
+
+.waike_top {
+    width: 250px;
+    height: 30px;
+    background: rgb(50, 58, 69);
+    border-radius: 5px 5px 0 0;
+}
+
+.xinghao,
+.dianliang {
+    color: white;
+    float: right;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.dianliang {
+    margin-right: 20px;
+}
+
+.top_size {
+    color: white;
+    margin: 5px 10px;
+    display: inline-block;
+}
+
+.XHimg {
+    display: inline-block;
+    width: 26px;
+    height: 14px;
+    background: url("../../img/xinhao.png") no-repeat;
+    background-size: 26px 14px;
+    margin-top: 9px;
+    margin-right: 5px;
+}
+
+.DLimg {
+    display: inline-block;
+    width: 26px;
+    height: 14px;
+    background: url("../../img/dianliang.png") no-repeat;
+    background-size: 26px 14px;
+    margin-top: 9px;
+    margin-right: 5px;
+}
+
+.danwei {
+    display: inline-block;
+}
+
+.XHnuber {
+    line-height: 30px;
+    display: inline-block;
+}
+
+.waike_btm {
+    width: 250px;
+    height: 90px;
+    background: white;
+    border-radius: 0 0 5px 5px;
+}
+
+.ul li {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+canvas {
+    margin-top: 5px;
+}
+
+.waike_btm_left {
+    float: left;
+    width: 190px;
+    height: 170px;
+}
+
+.waike_btm_right {
+    float: left;
+    width: 250px;
+    height: 90px;
+}
+
+.right_top {
+    width: 130px;
+    height: 90px;
+    float: left;
+    margin-left: 10px;
+}
+
+.right_bot {
+    width: 110px;
+    height: 90px;
+    float: left;
+}
+
+.wendu,
+.shidu {
+    font-size: 16px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.wendu_ber,
+.shidu_ber {
+    font-size: 30px;
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.wendu,
+.shidu {
+    color: black;
+}
+
+.wendu_ber,
+.shidu_ber {
+    color: rgb(25, 132, 203)
+}

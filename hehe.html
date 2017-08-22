@@ -1,126 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <script type="text/javascript" language="javascript">
-        var idTmr;
-
-        function getExplorer() {
-            var explorer = window.navigator.userAgent;
-            //ie 
-            if (explorer.indexOf("MSIE") >= 0) {
-                return 'ie';
-            }
-            //firefox 
-            else if (explorer.indexOf("Firefox") >= 0) {
-                return 'Firefox';
-            }
-            //Chrome
-            else if (explorer.indexOf("Chrome") >= 0) {
-                return 'Chrome';
-            }
-            //Opera
-            else if (explorer.indexOf("Opera") >= 0) {
-                return 'Opera';
-            }
-            //Safari
-            else if (explorer.indexOf("Safari") >= 0) {
-                return 'Safari';
-            }
-        }
-
-        function method1(tableid) { //整个表格拷贝到EXCEL中
-            if (getExplorer() == 'ie') {
-                var curTbl = document.getElementById(tableid);
-                var oXL = new ActiveXObject("Excel.Application");
-
-                //创建AX对象excel 
-                var oWB = oXL.Workbooks.Add();
-                //获取workbook对象 
-                var xlsheet = oWB.Worksheets(1);
-                //激活当前sheet 
-                var sel = document.body.createTextRange();
-                sel.moveToElementText(curTbl);
-                //把表格中的内容移到TextRange中 
-                sel.select;
-                //全选TextRange中内容 
-                sel.execCommand("Copy");
-                //复制TextRange中内容  
-                xlsheet.Paste();
-                //粘贴到活动的EXCEL中       
-                oXL.Visible = true;
-                //设置excel可见属性
-
-                try {
-                    var fname = oXL.Application.GetSaveAsFilename("Excel.xls", "Excel Spreadsheets (*.xls), *.xls");
-                } catch (e) {
-                    print("Nested catch caught " + e);
-                } finally {
-                    oWB.SaveAs(fname);
-
-                    oWB.Close(savechanges = false);
-                    //xls.visible = false;
-                    oXL.Quit();
-                    oXL = null;
-                    //结束excel进程，退出完成
-                    //window.setInterval("Cleanup();",1);
-                    idTmr = window.setInterval("Cleanup();", 1);
-
-                }
-
-            } else {
-                tableToExcel('ta')
-            }
-        }
-
-        function Cleanup() {
-            window.clearInterval(idTmr);
-            CollectGarbage();
-        }
-        var tableToExcel = (function() {
-            var uri = 'data:application/vnd.ms-excel;base64,',
-                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
-                base64 = function(s) {
-                    return window.btoa(unescape(encodeURIComponent(s)))
-                },
-                format = function(s, c) {
-                    return s.replace(/{(\w+)}/g,
-                        function(m, p) {
-                            return c[p];
-                        })
-                }
-            return function(table, name) {
-                if (!table.nodeType) table = document.getElementById(table)
-                var ctx = {
-                    worksheet: name || 'Worksheet',
-                    table: table.innerHTML
-                }
-                window.location.href = uri + base64(format(template, ctx))
-            }
-        })()
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./content/css/normalize.css">
+    <link rel="stylesheet" href="./content/css/htmleaf-demo.css">
+    <!-- <link rel="stylesheet" href="./content/css/fonts.css"> -->
+    <link rel="stylesheet" href="./content//jiankong//shishi/shishi._1500.css">
+    <script src="./content/js/gauge.min.js"></script>
 </head>
 
 <body>
-    <table id="ta">
-        <tr>
-            <td>1</td>
-            <td>admin</td>
-            <td>23</td>
-            <td>程序员</td>
-            <td>天津</td>
-            <td>admin@kali.com</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>guest</td>
-            <td>23</td>
-            <td>测试员</td>
-            <td>北京</td>
-            <td>guest@kali.com</td>
-        </tr>
-    </table>
-    <input id="Button1" type="button" value="导出EXCEL" onclick="javascript:method1('ta')" />
+
+    <div></div>
 </body>
+
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script>
+    for (var i = 0; i < 100; i++) {
+        var aa = $('<canvas data-type="radial-gauge" data-width="190" data-height="170" data-title="℃" data-value="40" data-animate-on-init="true" ' +
+            'data-animated-value="true" data-min-value="-40" data-max-value="60" data-major-ticks="-40,-30,-20,-10,0,10,20,30,40,50,60" ' +
+            'data-minor-ticks="2" data-stroke-ticks="true" data-color-plate="white" data-color-major-ticks="black" data-color-minor-ticks="black" ' +
+            'data-color-title="black" data-color-units="black" data-color-numbers="black" data-color-needle-start="black" data-color-needle-end="black" ' +
+            'data-value-box="false" data-animation-rule="bounce" data-animation-duration="500" data-font-value="Led" data-font-numbers="Led" ' +
+            'data-border-outer-width="3" data-border-middle-width="3" data-border-inner-width="3" data-highlights=\'[ ' +
+            '{ "from": -40, "to": 0, "color": "rgb(25,132,203)" }, ' +
+            '{ "from": 0, "to": 20, "color": "rgb(165,203,5)" }, ' +
+            '{ "from": 20, "to": 60, "color": "rgb(255,70,70)" }]\'> ' +
+            '</canvas>'
+        )
+        aa.appendTo('div')
+    }
+</script>
 
 </html>

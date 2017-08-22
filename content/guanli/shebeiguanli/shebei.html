@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设备管理</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./shebei_1500.css">
+    <link rel="stylesheet" href="./shebei_900.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="head_left">
+            <span>当前设备数量</span>
+            <span class="maohao">:</span>
+            <span class="number"></span>
+            <span style="margin-left:14px">验证对象</span>
+            <span class="maohao">:</span>
+            <select name="" class="xunhuanduixiang">
+                <option value="">全部</option>
+            <select>
+            <span class="head_btn" data-toggle="modal" data-target="#myModal_xinjian">新增设备</span>
+        </div>
+    </div>
+    <div class="content">
+        <table class="table1" border="0">
+            <thead>
+                <th>编号</th>
+                <th>设备名称</th>
+                <th>设备类型</th>
+                <th>所属验证对象</th>
+                <th>温度上限</th>
+                <th>温度下限</th>
+                <th>湿度上限</th>
+                <th>湿度下限</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>
+                        <span class='bianji' data-toggle='modal' data-target='#myModal_bianji'>编辑</span>|
+                        <span class='del' data-toggle='modal' data-target='#myModal_del'>删除</span>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <!-------------------------------------编辑模态框-------------------------------------->
+    <div class="modal fade" id="myModal_bianji" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document" style="width:485px;height:330px;">
+            <div class="modal-content myModal">
+                <div class="modal-header" style="border:0">
+                    <h4 class="modal-title" id="myModalLabel" style="text-align: center;">设备信息设置</h4>
+                </div>
+                <div class="modal-body" style="margin: 0 44px 0 30px;    padding: 0px;">
+                    <div style="display:flex; flex-direction:column;">
+                        <div class="flex-item">
+                            <span style="margin-left:18px">设备类型</span><span class="maohao">:</span>
+                            <label>
+                                <input type="radio" name="bianji_leixing" value="wendu" class="bianji_leixing" onclick="$('.shidu').attr('disabled',true);$('.shidu').val('')" checked>温度卡片
+                            </label>
+                            <label style="margin-left:40px">
+                                <input type="radio" name="bianji_leixing" value="usb" class="bianji_leixing" onclick="$('.shidu').attr('disabled',false)">USB温湿度
+                            </label>
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:46px">编号</span><span class="maohao">:</span>
+                            <input type="text" class="bianji_bianhao" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
+                                onblur="this.v();">
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:18px">设备名称</span><span class="maohao">:</span>
+                            <input type="text" class="bianji_name">
+                        </div>
+                            <div class="flex-item">
+                            <span style="margin-left:-10px">所属验证对象</span><span class="maohao">:</span>
+                            <select name="" class="xunhunayanzheng">
+                            <select>
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:-10px">温度测量范围</span><span class="maohao">:</span>
+                            <input type="text" class="bianji_wendu">
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:18px">温度上限</span><span class="maohao">:</span>
+                            <input type="number" class="bianji_wenduUp wenshidu">℃
+                            <span style="margin-left:30px">温度下限</span><span class="maohao">:</span>
+                            <input type="number" class="bianji_wenduDown wenshidu">℃
+                        </div>
+                        <div class="flex-item">
+                            <label style="margin-left:18px"><input name="" type="checkbox" value="" disabled="true" class="shidu"/><span>湿度</span></label> 
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:-10px">湿度测量范围</span><span class="maohao">:</span>
+                            <input type="text" class="bianji_shidu shidu" disabled="true">
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:18px">温度上限</span><span class="maohao">:</span>
+                            <input type="number" class="bianji_shiduUp wenshidu shidu" disabled="true">℃
+                            <span style="margin-left:30px">温度下限</span><span class="maohao">:</span>
+                            <input type="number" class="bianji_shiduDown wenshidu shidu" disabled="true">℃
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border:0">
+                    <span class="baoxun_bianji" data-dismiss="modal">保存</span>
+                    <span class="quxiao_bianji" data-dismiss="modal">取消</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------------新建模态框-------------------------------------->
+    <div class="modal fade" id="myModal_xinjian" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document" style="width:485px;height:330px;">
+            <div class="modal-content myModal">
+                <div class="modal-header" style="border:0">
+                    <h4 class="modal-title" id="myModalLabel" style="text-align: center;">设备信息设置</h4>
+                </div>
+                <div class="modal-body" style="margin: 0 44px 0 30px;    padding: 0px;">
+                    <div style="display:flex; flex-direction:column;">
+                        <div class="flex-item">
+                            <span style="margin-left:18px">设备类型</span><span class="maohao">:</span>
+                            <label>
+                                <input type="radio" name="leixing" value="leixing" class="xinjina_leixing" onclick="$('.shidu').attr('disabled',true);$('.shidu').val('')" checked>温度卡片
+                            </label>
+                            <label style="margin-left:40px">
+                                <input type="radio" name="leixing" value="leixing" class="xinjina_leixing" onclick="$('.shidu').attr('disabled',false)">USB温湿度
+                            </label>
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:46px">编号</span><span class="maohao">:</span>
+                            <input type="text" class="xinjina_bianhao" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();" >
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:18px">设备名称</span><span class="maohao">:</span>
+                            <input type="text" class="xinjina_name">
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:-10px">所属验证对象</span><span class="maohao">:</span>
+                            <select name="" class="xunhunayanzheng">
+                            <select>
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:-10px">温度测量范围</span><span class="maohao">:</span>
+                            <input type="text" class="xinjian_wendu">
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:18px">温度上限</span><span class="maohao">:</span>
+                            <input type="number" class="xinjina_wenduUp wenshidu">℃
+                            <span style="margin-left:30px">温度下限</span><span class="maohao">:</span>
+                            <input type="number" class="xinjina_wenduDown wenshidu">℃
+                        </div>
+                        <div class="flex-item">
+                            <label style="margin-left:18px"><input name="" type="checkbox" value="" class="wenshidu shidu" disabled="true"/><span>湿度</span></label> 
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:-10px">湿度测量范围</span><span class="maohao">:</span>
+                            <input type="text" class="xinjian_wendu shidu" disabled="true">
+                        </div>
+                        <div class="flex-item">
+                            <span style="margin-left:18px">湿度上限</span><span class="maohao">:</span>
+                            <input type="number" class="xinjina_shiduUp wenshidu shidu" name="textfield" disabled="true">℃
+                            <span style="margin-left:30px">湿度下限</span><span class="maohao">:</span>
+                            <input type="number" class="xinjina_shiduDown wenshidu shidu" name="textfield" disabled="true">℃
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border:0">
+                    <span class="tainjia" data-dismiss="modal">保存</span>
+                    <span class="quxiao" data-dismiss="modal">关闭</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal_del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document" style="width:485px;height:330px;">
+            <div class="modal-content myModal">
+                <div class="modal-header" style="border:0">
+                    <h4 class="modal-title" id="myModalLabel" style="text-align: center;"></h4>
+                </div>
+                <div class="modal-body" style="margin: 0 30px 0 30px;    padding: 0px;">
+                    <div style="display:flex; flex-direction:column;">
+                        <div class="flex-item">
+                            <h4 style="margin-left:155px">是否确认删除</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border:0">
+                    <span class="queding_del" data-dismiss="modal">确定</span>
+                    <span class="quxiao_del" data-dismiss="modal">取消</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script src="../../js/YiYunWuLian_Url.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="./shebei.js"></script>
+<script src="./shezhi_click.js"></script>
+<script>
+    $(".head_btn").click(function(){
+         window.parent.zhezhao2()
+    })
+          $(".quxiao_del,.quxiao,.quxiao_bianji,.queding_del,.tainjia,.baoxun_bianji").click(function() {
+        window.parent.QXzhezhao2()
+    })
+</script>
+</html>

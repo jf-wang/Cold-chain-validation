@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <div class="head">
+        <img src="./img/lenglian.png" alt="" style="margin:25px 0 0 220px;">
+    </div>
+    <div class="con">
+        <div class="logo">
+
+        </div>
+        <div class="form">
+            <div style="display:flex; flex-direction:column;margin:23px 0 0 40px;">
+                <div class="flex-item">
+                    <div class="size"></div>
+                </div>
+                <div class="flex-item">
+                    <div class="user">
+                        <input type="text" id="userName" placeholder="用户名">
+                        <div class="use"></div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="pwd">
+                        <input type="password" id="userPwd" placeholder="密码">
+                        <div class="pw"></div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="yanzhngma">
+                        <input type="text" class="input" />
+                        <span id="code" class="nocode">验证码</span>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <input name='Fruit' type='checkbox' value='' checked/>
+                    <span>记住密码</span>
+                </div>
+                <div class="flex-item">
+                    <button class="btn">登录</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>中易云（唐山）物联网有限公司版权所有</span>
+        </div>
+</body>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script src="./js/YiYunWuLian_Url.js"></script>
+<script>
+    $("#userName").val(localStorage.getItem("userName")); //默认读取localStorage
+    $("#userPwd").val(localStorage.getItem("pwd"));
+    var code = "";
+    var random = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    var codeLength = 4;
+
+    function codes() {
+        code = ""
+        for (var i = 0; i < 4; i++) { //循环codeLength 我设置的4就是循环4次
+            var index = Math.floor(Math.random() * 26); //设置随机数范围,这设置为0 ~ 36
+            code += random[index]; //字符串拼接 将每次随机的字符 进行拼接
+        }
+        $("#code").html(code);
+        $("#code").css('background', "rgb(13,114,200)");
+        $("#code").css('color', "white");
+    }
+    codes()
+
+    $("#code").on('click', codes)
+    $("#code").on('click', codes);
+
+    $(".btn").click(function() { //点击登录
+        $.ajax({
+            type: "post",
+            url: "" + url + "/api/Account/Login",
+            data: {
+                userId: $("#userName").val(),
+                password: $("#userPwd").val()
+            },
+            success: function(data, status) {
+                if ($(".input").val() == code && code != 9999) { //判断输入的验证码
+                    if (data.Code != 0) {
+                        alert("登录失败:" + data.Message);
+                        return;
+                    }
+                    // alert("登录成功:Token" + data.Data);
+                    window.open("./index.html", "_self"); //跳转
+                    localStorage.setItem("token", data.Data); //保存token
+                    if ($('input[name="Fruit"]').prop("checked")) { //判断是否记住密码
+                        localStorage.setItem("userName", $("#userName").val());
+                        localStorage.setItem("pwd", $("#userPwd").val());
+                    } else {
+                        localStorage.setItem("userName", "");
+                        localStorage.setItem("pwd", "");
+                    }
+                } else {
+                    alert("验证码输入错误!");
+                }
+            },
+            error: function(e) {
+                alert("登录失败!");
+            },
+            complete: function() {
+
+            }
+        });
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.head {
+    width: 100%;
+    height: 80px;
+    background: url("../img/login_head.png") no-repeat;
+}
+
+.con {
+    margin-top: 95px;
+    width: 100%;
+    height: 635px;
+}
+
+.logo {
+    width: 534px;
+    height: 529px;
+    background: url("../img/login_logo.png") no-repeat;
+    margin: 0 0 0 460px;
+    float: left;
+}
+
+.form {
+    width: 350px;
+    height: 390px;
+    background: url("../img/form_back.png") no-repeat;
+    float: left;
+    margin: 0 0 0 65px;
+}
+
+.size {
+    background: url("../img/form_size.png") no-repeat;
+    width: 102px;
+    height: 17px;
+}
+
+.flex-item {
+    margin-bottom: 20px;
+}
+
+#userName,
+#userPwd {
+    width: 230px;
+    height: 40px;
+    padding-left: 40px;
+}
+
+.use {
+    width: 17px;
+    height: 20px;
+    background: url("../img/user.png") no-repeat;
+    background-size: 17px 20px;
+    position: relative;
+    top: -30px;
+    left: 10px;
+}
+
+.pw {
+    width: 16px;
+    height: 20px;
+    background: url("../img/pwd.png") no-repeat;
+    background-size: 16px 20px;
+    position: relative;
+    top: -30px;
+    left: 10px;
+}
+
+.input {
+    width: 160px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+#code {
+    display: inline-block;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    width: 90px;
+    height: 42px;
+    line-height: 33px;
+    cursor: pointer;
+}
+
+.btn {
+    width: 270px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 100px;
+    float: left;
+    width: 100%;
+    height: 80px;
+    background: url("../img/login_footer_back.png") no-repeat
+}
+
+.footer span {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    line-height: 80px;
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1500px) {
+    .con {
+        margin-top: 25px;
+        width: 100%;
+        height: 335px;
+    }
+    .logo {
+        width: 400px;
+        height: 396px;
+        margin: 0 0 0 300px;
+        background-size: 334px 331px
+    }
+    .flex-item {
+        margin-bottom: 10px;
+    }
+    .form {
+        height: 350px;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+}

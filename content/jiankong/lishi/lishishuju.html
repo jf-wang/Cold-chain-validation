@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>历史数据</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/jedate.css">
+    <link rel="stylesheet" href="./lishi.css">
+
+    <style>
+        @media print {
+            .noprint {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noprint">
+        <div class="head">
+            <div style="display:flex; flex-direction:row;">
+                <div class=" flex-item ">
+                    <span>公司</span><span class="maohao">:</span>
+                    <select name="" class="xunhuangonsi">
+                        <option value="">所有公司</option>
+                    <select>
+                </div>
+                <div class=" flex-item ">
+                    <span>中继器</span><span class="maohao">:</span>
+                    <select name="" class="xunhunazhongjiqi">
+                        <option value="">全部中继</option>
+                    <select>
+                </div>
+                <div class=" flex-item ">
+                    <span>温度卡片</span><span class="maohao">:</span>
+                    <select name="" class="xunhuankapian">
+                        <option value="">全部卡片</option>
+                    <select>
+                </div>
+                <div class=" flex-item ">
+                    <span>日期</span><span class="maohao">:</span>
+                  <input class="datainp" id="dateinfo4" type="text" placeholder="请选择" readonly>-
+                  <input class="datainp" id="dateinfo5" type="text" placeholder="请选择" readonly>
+                  <input class="datainp" id="dateinfo6" type="text" placeholder="请选择" readonly style="display:none">
+                </div>
+                <div class=" flex-item ">
+                    <span class="yulan" >查询</span>
+                </div>
+                <div class=" flex-item ">
+                    <span class="dayin" onclick="javascript:printit('div1','print');">打印</span>
+                </div>
+                <div class=" flex-item ">
+                    <span class="daochu"  onclick="javascript:method1('table')">导出</span>
+                    <OBJECT classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2" height="0" id="WebBrowser" width="0" VIEWASTEXT></OBJECT> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='div1'>
+        <div class="con" id="table">
+            <h4 style="margin:20px 250px;" class="gongsi"></h4>
+            <div class="time">
+                <span>统计时间</span>
+                <span class="maohao">:</span>
+                <span class="now_time">2017-07-09</span>
+            </div>
+            <table class="table1" border="1" cellspacing="0" cellpadding="0" >
+                <thead>
+                    <th>日期</th>
+                    <th>温度1-1</th>
+                    <th>温度1-2</th>
+                    <th>温度1-3</th>
+                    <th>温度1-4</th>
+                    <th>温度1-5</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2017/7/18 09:53:27</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="time">
+                <span>制表时间</span>
+                <span class="maohao">:</span>
+                <span class="now_time">2017-07-09 15:45:08</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script src="../../js/YiYunWuLian_Url.js"></script>
+<script src="../../js/jedate.js"></script>
+<script src="./lishi.js"></script>
+<script src="./dayin_daochu.js"></script>
+<script src="../shishi/xunhuan.js"></script>
+</html>

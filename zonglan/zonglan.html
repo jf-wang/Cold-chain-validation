@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>总览</title>
+    <link rel="stylesheet" href="./zonglan.css">
+    <link rel="stylesheet" href="./zonglan_900.css">
+</head>
+
+<body>
+    <div class="head">
+        <span>公司管理</span>
+        <span class="maohao">:</span>
+        <span class="number"></span>
+    </div>
+    <div class="con">
+        <ul>
+
+        </ul>
+    </div>
+</body>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/YiYunWuLian_Url.js"></script>
+<script src="./zonglan.js"></script>
+<script>
+    var token = localStorage.getItem("token");
+    var uesrName = localStorage.getItem("userName");
+    $.ajax({
+        type: "GET",
+        contentType: "application/x-www-form-urlencoded",
+        url: "" + url + "/api/User/GetUser?userId=" + uesrName + "&Token=" + token + "",
+        data: {},
+        async: false,
+        dataType: "json",
+        success: function(data, status) {
+            // console.log(data.Data.UserRole)
+            if (data.Data.UserRole == 1 || uesrName == "admin") {
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/x-www-form-urlencoded",
+                    url: "" + url + "/api/Department/GetDepList?Token=" + token + "",
+                    data: {},
+                    async: false,
+                    dataType: "json",
+                    success: function(data, status) {
+                        $(".number").text(data.Data.length)
+                        for (var i = 0; i < data.Data.length; i++) {
+                            $.ajax({ //循环公司*****************************************************/**/ok */
+                                type: "GET",
+                                contentType: "application/x-www-form-urlencoded",
+                                url: "" + url + "/api/Department/GetDep/" + data.Data[i].DepId + "?Token=" + token + "",
+                                data: {},
+                                dataType: "json",
+                                success: function(data, status) {
+                                    var bmname = data.Data.DepName;
+                                    var id = data.Data.DepId;
+                                    var aa = $("<a href='../content/index.html' target='_blank'>" +
+                                        "<li onclick='gongsi(this)'>" +
+                                        "<div class='gongsilogo'><img src='" + url + "/api/Logo/GetLogo?DepId=" + id + "' alt='' class='gongsilogo'></div>" +
+                                        "<span class='font'>" + bmname + "</span>" +
+                                        "<span style='display:none'>" + id + "</span>" +
+                                        "</li>" +
+                                        "</a>");
+                                    aa.appendTo("ul");
+                                },
+                                error: function(e) {
+                                    alert("公司列表请求失败!");
+                                },
+                                complete: function() {}
+                            });
+
+                        }
+                    },
+                    error: function(e) {
+                        alert("请求失败!");
+                    },
+                    complete: function() {}
+                });
+            } else {
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/x-www-form-urlencoded",
+                    url: "" + url + "/api/User/GetManageDeps?userId=" + uesrName + "&Token=" + token + "",
+                    data: {},
+                    dataType: "json",
+                    success: function(data, status) {
+                        $(".number").text(data.Data.length)
+                        for (var i = 0; i < data.Data.length; i++) {
+                            var depId = data.Data[i];
+                            $.ajax({ //循环公司*****************************************************/**/ok */
+                                type: "GET",
+                                contentType: "application/x-www-form-urlencoded",
+                                url: "" + url + "/api/Department/GetDep/" + depId + "?Token=" + token + "",
+                                data: {},
+                                dataType: "json",
+                                success: function(data, status) {
+                                    var bmname = data.Data.DepName;
+                                    var id = data.Data.DepId;
+                                    var aa = $("<a href='../content/index.html' target='_blank'>" +
+                                        "<li onclick='gongsi(this)'>" +
+                                        "<div class='gongsilogo'><img src='" + url + "/api/Logo/GetLogo?DepId=" + id + "' alt='' class='gongsilogo'></div>" +
+                                        "<span class='font'>" + bmname + "</span>" +
+                                        "<span style='display:none'>" + id + "</span>" +
+                                        "</li>" +
+                                        "</a>");
+                                    aa.appendTo("ul");
+                                },
+                                error: function(e) {
+                                    alert("公司列表请求失败!");
+                                },
+                                complete: function() {}
+                            });
+                        }
+                    },
+                    error: function(e) {
+                        alert("用户下的公司列表请求失败!");
+                    },
+                    complete: function() {}
+                });
+            }
+        },
+        error: function(e) {
+            alert("请求失败!");
+        },
+        complete: function() {}
+    });
+
+
+    // $.ajax({ //页面加载******************************************************/**/ok */
+    //     type: "GET",
+    //     contentType: "application/x-www-form-urlencoded",
+    //     url: "" + url + "/api/Department/GetDepList?Token=" + token + "",
+    //     data: {},
+    //     dataType: "json",
+    //     success: function(data, status) {
+    //         $(".number").text(data.Data.length)
+    //         for (var i = 0; i < data.Data.length; i++) {
+    //             var bmname = data.Data[i].DepName;
+    //             var id = data.Data[i].DepId;
+    //             var aa = $("<a href='../content/index.html' target='_blank'>" +
+    //                 "<li onclick='gongsi(this)'>" +
+    //                 "<div class='gongsilogo'><img src='../img/logo_lizi.png' alt=''></div>" +
+    //                 "<span class='font'>" + bmname + "</span>" +
+    //                 "<span style='display:none'>" + id + "</span>" +
+    //                 "</li>" +
+    //                 "</a>");
+    //             aa.appendTo("ul");
+    //         }
+    //     },
+    //     error: function(e) {
+    //         alert("公司加载页面失败!");
+    //     },
+    //     complete: function() {}
+    // });
+
+    function gongsi(row) {
+        var depId = $(row).children().siblings().eq(2).html();
+        localStorage.setItem("depId", depId)
+        var gongsiname = $(row).children().siblings().eq(1).html();
+        localStorage.setItem("gongsiname", gongsiname);
+        // console.log(localStorage.getItem("gongsiname"))
+    }
+</script>
+
+</html>
