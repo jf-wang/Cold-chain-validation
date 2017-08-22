@@ -4,3 +4,4 @@
 
 [登录地址](http://121.42.30.247:85)
 
+![demo](https://raw.githubusercontent.com/jf-wang/Cold-chain-validation/master/example/login.png)
